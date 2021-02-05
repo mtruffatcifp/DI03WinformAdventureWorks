@@ -15,7 +15,7 @@ namespace DI03ControlLibrary
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string sql = $"SELECT DISTINCT ProductModel.ProductModelID, ProductModel.Name, Product.ListPrice, ProductPhoto.LargePhoto FROM Production.ProductModel JOIN Production.Product ON ProductModel.ProductModelID = Product.ProductModelID JOIN Production. ProductProductPhoto ON Product.ProductID = ProductProductPhoto.ProductID JOIN Production.ProductPhoto ON ProductProductPhoto.ProductPhotoID = ProductPhoto.ProductPhotoID WHERE Product.ProductModelID = {productModelId} ORDER BY Product.ListPrice;";
+                string sql = $"SELECT DISTINCT ProductModel.ProductModelID, ProductModel.Name, ProductPhoto.LargePhoto, Product.ListPrice FROM Production.ProductModel INNER JOIN Production.Product ON ProductModel.ProductModelID = Product.ProductModelID INNER JOIN Production.ProductProductPhoto ON Product.ProductID = ProductProductPhoto.ProductID INNER JOIN Production.ProductPhoto ON ProductProductPhoto.ProductPhotoID = ProductPhoto.ProductPhotoID WHERE Product.ProductModelID = {productModelId} ORDER BY Product.ListPrice;";
                 var productModel = conn.Query<ProductModel>(sql).FirstOrDefault();
                 return productModel;
             }
@@ -26,7 +26,7 @@ namespace DI03ControlLibrary
             List<int> ids = new List<int>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string sql = "SELECT Production.Product.ProductID FROM Production.Product;";
+                string sql = "SELECT DISTINCT Production.Product.ProductModelID FROM Production.Product WHERE Production.Product.ProductModelID IS NOT NULL;";
                 ids = conn.Query<int>(sql).ToList();
                 Random rnd = new Random();
                 return ids[rnd.Next(ids.Count)];

@@ -26,6 +26,5 @@ namespace DI03ControlLibrary
             nameTextBox.Text = $"{productModel.ProductModelId} -  {productModel.Name}";
             priceTextBox.Text = productModel.ListPrice.ToString() + " €";
         }
-
     }
 }

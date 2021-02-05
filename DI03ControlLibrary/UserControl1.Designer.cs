@@ -32,6 +32,8 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.priceLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,15 +51,17 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(3, 232);
+            this.nameTextBox.Location = new System.Drawing.Point(3, 243);
             this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.ReadOnly = true;
             this.nameTextBox.Size = new System.Drawing.Size(251, 20);
             this.nameTextBox.TabIndex = 1;
             // 
             // priceTextBox
             // 
-            this.priceTextBox.Location = new System.Drawing.Point(260, 232);
+            this.priceTextBox.Location = new System.Drawing.Point(260, 243);
             this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.ReadOnly = true;
             this.priceTextBox.Size = new System.Drawing.Size(72, 20);
             this.priceTextBox.TabIndex = 2;
             // 
@@ -65,21 +69,41 @@
             // 
             this.groupBox1.Location = new System.Drawing.Point(338, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(168, 249);
+            this.groupBox1.Size = new System.Drawing.Size(168, 264);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sizes";
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(3, 229);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(76, 13);
+            this.nameLabel.TabIndex = 4;
+            this.nameLabel.Text = "Product name:";
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Location = new System.Drawing.Point(257, 229);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(34, 13);
+            this.priceLabel.TabIndex = 4;
+            this.priceLabel.Text = "Price:";
             // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.priceLabel);
+            this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.priceTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.pictureBox);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(512, 258);
+            this.Size = new System.Drawing.Size(512, 270);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -92,5 +116,7 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label priceLabel;
     }
 }
