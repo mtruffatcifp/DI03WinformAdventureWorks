@@ -20,5 +20,17 @@ namespace DI03ControlLibrary
                 return productModel;
             }
         }
+
+        public static int getRandomId()
+        {
+            List<int> ids = new List<int>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string sql = "SELECT Production.Product.ProductID FROM Production.Product;";
+                ids = conn.Query<int>(sql).ToList();
+                Random rnd = new Random();
+                return ids[rnd.Next(ids.Count)];
+            }
+        }
     }
 }

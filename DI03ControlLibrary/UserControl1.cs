@@ -19,7 +19,7 @@ namespace DI03ControlLibrary
         }
         private void pictureBox_Click(object sender, EventArgs e)
         {
-            var productModel = DataAccess.getProductModel(DataAccess.getProductModelId());
+            var productModel = DataAccess.getProductModel(DataAccess.getRandomId());
             MemoryStream ms = new MemoryStream(productModel.LargePhoto);
             Image img = Image.FromStream(ms);
             pictureBox.Image = img;
