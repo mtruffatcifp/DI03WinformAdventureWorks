@@ -57,7 +57,12 @@ namespace DI03ControlLibrary
                 Button button = new Button();
                 button.Text = p.Size;
                 button.Name = p.ProductId.ToString();
-                button.Size = new Size(160, 20);
+                button.Size = new Size(125, 25);
+                button.TabStop = false;
+                button.FlatStyle = FlatStyle.Flat;
+                button.FlatAppearance.BorderSize = 0;
+                button.Font = new Font("Nirmala UI", 10F);
+                button.ForeColor = Color.WhiteSmoke;
                 sizesFlowLayoutPanel.Controls.Add(button);
                 button.Click += Size_Click;
             }
