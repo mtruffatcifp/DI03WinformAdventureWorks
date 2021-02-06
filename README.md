@@ -46,7 +46,7 @@ Project Link: [https://github.com/mtruffatcifp](https://github.com/mtruffatcifp)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/mtruffatcifp/DI03WinformAdventureWorks.svg?style=for-the-badge
 [contributors-url]: https://github.com/mtruffatcifp/DI03WinformAdventureWorks/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/mtruffatcifp/DI03WinformAdventureWorks.svg?style=for-the-badge
 [forks-url]: https://github.com/mtruffatcifp/DI03WinformAdventureWorks/network/members
