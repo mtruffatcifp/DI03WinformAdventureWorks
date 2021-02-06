@@ -48,8 +48,8 @@ Project Link: [https://github.com/mtruffatcifp](https://github.com/mtruffatcifp)
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/mtruffatcifp/DI03WinformAdventureWorks/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/mtruffatcifp/DI03WinformAdventureWorks.svg?style=for-the-badge
 [forks-url]: https://github.com/mtruffatcifp/DI03WinformAdventureWorks/network/members
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/mtruffatcifp/DI03WinformAdventureWorks.svg?style=for-the-badge
 [issues-url]: https://github.com/mtruffatcifp/DI03WinformAdventureWorks/issues
 [product-screenshot]: screenshot.png
