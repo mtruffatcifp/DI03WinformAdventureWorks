@@ -62,5 +62,12 @@ namespace DI03ControlLibrary
                 button.Click += Size_Click;
             }
         }
+
+        private void pictureBox_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.IsBalloon = true;
+            tt.SetToolTip(pictureBox, "Click here to load a random product.");
+        }
     }
 }

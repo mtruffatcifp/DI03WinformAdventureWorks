@@ -48,6 +48,7 @@
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
+            this.pictureBox.MouseHover += new System.EventHandler(this.pictureBox_MouseHover);
             // 
             // nameTextBox
             // 
@@ -90,7 +91,7 @@
             this.sizesFlowLayoutPanel.Size = new System.Drawing.Size(171, 260);
             this.sizesFlowLayoutPanel.TabIndex = 5;
             // 
-            // UserControl1
+            // DI03UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +101,7 @@
             this.Controls.Add(this.priceTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.pictureBox);
-            this.Name = "UserControl1";
+            this.Name = "DI03UserControl";
             this.Size = new System.Drawing.Size(512, 270);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
