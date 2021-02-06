@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DI03ControlLibrary
 {
@@ -30,6 +28,34 @@ namespace DI03ControlLibrary
                 ids = conn.Query<int>(sql).ToList();
                 Random rnd = new Random();
                 return ids[rnd.Next(ids.Count)];
+            }
+        }
+
+        public static List<Product> getProductSizes(int id)
+        {
+            List<Product> productSizes = new List<Product>();
+            List<string> tam = new List<string>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string sql = $"SELECT Production.Product.ProductID, Production.Product.Size FROM Production.Product WHERE Production.Product.ProductModelID = {id};";
+                List<Product> sizes = conn.Query<Product>(sql).ToList();
+                foreach (var s in sizes)
+                {
+                    bool duplicate = false;
+                    foreach (Product product in productSizes)
+                    {
+                        if (s.Size == product.Size)
+                        {
+                            duplicate = true;
+                            break;
+                        }
+                    }
+                    if (!duplicate)
+                    {
+                        productSizes.Add(s);
+                    }
+                }
+                return productSizes;
             }
         }
     }

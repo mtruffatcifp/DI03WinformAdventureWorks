@@ -31,9 +31,9 @@
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
+            this.sizesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,15 +65,6 @@
             this.priceTextBox.Size = new System.Drawing.Size(72, 20);
             this.priceTextBox.TabIndex = 2;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(338, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(168, 264);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sizes";
-            // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
@@ -92,13 +83,20 @@
             this.priceLabel.TabIndex = 4;
             this.priceLabel.Text = "Price:";
             // 
+            // sizesFlowLayoutPanel
+            // 
+            this.sizesFlowLayoutPanel.Location = new System.Drawing.Point(338, 3);
+            this.sizesFlowLayoutPanel.Name = "sizesFlowLayoutPanel";
+            this.sizesFlowLayoutPanel.Size = new System.Drawing.Size(171, 260);
+            this.sizesFlowLayoutPanel.TabIndex = 5;
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.sizesFlowLayoutPanel);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.priceTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.pictureBox);
@@ -115,8 +113,8 @@
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox priceTextBox;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.FlowLayoutPanel sizesFlowLayoutPanel;
     }
 }

@@ -25,6 +25,26 @@ namespace DI03ControlLibrary
             pictureBox.Image = img;
             nameTextBox.Text = $"{productModel.ProductModelId} -  {productModel.Name}";
             priceTextBox.Text = productModel.ListPrice.ToString() + " €";
+            loadSizeButtons(productModel.ProductModelId);
+        }
+
+        private void loadSizeButtons(int id)
+        {
+            sizesFlowLayoutPanel.Controls.Clear();
+            List<Product> products = DataAccess.getProductSizes(id);
+
+            foreach (var p in products)
+            {
+                //Avoid creating emtpy button in case product has no size options
+                if (p.Size == null)
+                {
+                    continue;
+                }
+                Button button = new Button();
+                button.Text = p.Size;
+                button.Size = new Size(160, 20);
+                sizesFlowLayoutPanel.Controls.Add(button);
+            }
         }
     }
 }
