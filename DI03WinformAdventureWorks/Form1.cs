@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DI03ControlLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace DI03WinformAdventureWorks
         public Form1()
         {
             InitializeComponent();
+            dI03UserControl1.ButtonSize_Click += getProductId;
+        }
+
+        private void getProductId(Object sender, UserControlEventArgs e)
+        {
+            productIdTextBox.Text = e.IdProduct;
         }
     }
 }

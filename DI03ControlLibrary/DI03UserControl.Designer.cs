@@ -1,6 +1,6 @@
 ﻿namespace DI03ControlLibrary
 {
-    partial class UserControl1
+    partial class DI03UserControl
     {
         /// <summary>
         /// Required designer variable.

@@ -28,31 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.userControl11 = new DI03ControlLibrary.UserControl1();
+            this.productIdTextBox = new System.Windows.Forms.TextBox();
+            this.dI03UserControl1 = new DI03ControlLibrary.DI03UserControl();
             this.SuspendLayout();
             // 
-            // userControl11
+            // productIdTextBox
             // 
-            this.userControl11.Location = new System.Drawing.Point(12, 12);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(518, 257);
-            this.userControl11.TabIndex = 0;
+            this.productIdTextBox.Location = new System.Drawing.Point(542, 12);
+            this.productIdTextBox.Name = "productIdTextBox";
+            this.productIdTextBox.Size = new System.Drawing.Size(78, 20);
+            this.productIdTextBox.TabIndex = 1;
+            // 
+            // dI03UserControl1
+            // 
+            this.dI03UserControl1.Location = new System.Drawing.Point(12, 12);
+            this.dI03UserControl1.Name = "dI03UserControl1";
+            this.dI03UserControl1.Size = new System.Drawing.Size(512, 270);
+            this.dI03UserControl1.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.userControl11);
+            this.ClientSize = new System.Drawing.Size(629, 289);
+            this.Controls.Add(this.dI03UserControl1);
+            this.Controls.Add(this.productIdTextBox);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DI03ControlLibrary.UserControl1 userControl11;
+        private System.Windows.Forms.TextBox productIdTextBox;
+        private DI03ControlLibrary.DI03UserControl dI03UserControl1;
     }
 }
 

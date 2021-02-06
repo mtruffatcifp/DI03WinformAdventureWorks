@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DI03ControlLibrary
 {
-    class Product
+    public class Product
     {
         public int ProductId { get; set; }
         public string Size { get; set; }

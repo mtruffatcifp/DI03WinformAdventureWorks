@@ -11,9 +11,23 @@ using System.Drawing;
 
 namespace DI03ControlLibrary
 {
-    public partial class UserControl1: UserControl
+    public partial class DI03UserControl:UserControl
     {
-        public UserControl1()
+        Product product = new Product();
+        public EventHandler<UserControlEventArgs> ButtonSize_Click;
+
+        public virtual void OnButtonSize_Click(UserControlEventArgs e)
+        {
+            ButtonSize_Click?.Invoke(this, e);
+        }
+
+        public void Size_Click(Object sender, EventArgs e)
+        {
+            product.ProductId = Int32.Parse(((Button)sender).Name); //Conseguir id
+            UserControlEventArgs args = new UserControlEventArgs(product); //se le pasa los argumentos al evento
+            OnButtonSize_Click(args);
+        }
+        public DI03UserControl()
         {
             InitializeComponent();
         }
@@ -42,8 +56,10 @@ namespace DI03ControlLibrary
                 }
                 Button button = new Button();
                 button.Text = p.Size;
+                button.Name = p.ProductId.ToString();
                 button.Size = new Size(160, 20);
                 sizesFlowLayoutPanel.Controls.Add(button);
+                button.Click += Size_Click;
             }
         }
     }
