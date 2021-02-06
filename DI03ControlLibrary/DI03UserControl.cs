@@ -67,7 +67,7 @@ namespace DI03ControlLibrary
         {
             ToolTip tt = new ToolTip();
             tt.IsBalloon = true;
-            tt.SetToolTip(pictureBox, "Click here to load a random product.");
+            tt.SetToolTip(pictureBox, "Click to display another product");
         }
     }
 }

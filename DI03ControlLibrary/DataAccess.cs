@@ -13,8 +13,7 @@ namespace DI03ControlLibrary
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string sql = $"SELECT DISTINCT ProductModel.ProductModelID, ProductModel.Name, ProductPhoto.LargePhoto, Product.ListPrice FROM Production.ProductModel INNER JOIN Production.Product ON ProductModel.ProductModelID = Product.ProductModelID INNER JOIN Production.ProductProductPhoto ON Product.ProductID = ProductProductPhoto.ProductID INNER JOIN Production.ProductPhoto ON ProductProductPhoto.ProductPhotoID = ProductPhoto.ProductPhotoID WHERE Product.ProductModelID = {productModelId} ORDER BY Product.ListPrice;";
-                var productModel = conn.Query<ProductModel>(sql).FirstOrDefault();
+                var productModel = conn.Query<ProductModel>($"EXEC spGetProductModelById {productModelId}").FirstOrDefault();
                 return productModel;
             }
         }
@@ -24,23 +23,21 @@ namespace DI03ControlLibrary
             List<int> ids = new List<int>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string sql = "SELECT DISTINCT Production.Product.ProductModelID FROM Production.Product WHERE Production.Product.ProductModelID IS NOT NULL;";
-                ids = conn.Query<int>(sql).ToList();
+                ids = conn.Query<int>("EXEC spGetAllProductModelId;").ToList();
                 Random rnd = new Random();
                 return ids[rnd.Next(ids.Count)];
             }
         }
 
-        public static List<Product> getProductSizes(int id)
+        public static List<Product> getProductSizes(int productModelId)
         {
             List<Product> productSizes = new List<Product>();
             List<string> tam = new List<string>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string sql = $"SELECT Production.Product.ProductID, Production.Product.Size FROM Production.Product WHERE Production.Product.ProductModelID = {id};";
-                List<Product> sizes = conn.Query<Product>(sql).ToList();
+                List<Product> sizes = conn.Query<Product>($"EXEC spGetProductModelSizes {productModelId};").ToList();
                 foreach (var s in sizes)
-                {
+                {   
                     bool duplicate = false;
                     foreach (Product product in productSizes)
                     {
